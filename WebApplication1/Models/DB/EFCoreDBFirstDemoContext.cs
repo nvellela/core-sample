@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using WebApplication1.Models.DB;
 
 namespace WebApplication1.Models.DB
 {
@@ -16,15 +17,15 @@ namespace WebApplication1.Models.DB
         }
 
         public virtual DbSet<Student> Student { get; set; }
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=.\\sqlexpress01;Database=EFCoreDBFirstDemo;Trusted_Connection=True;");
-//            }
-//        }
+        public virtual DbSet<Course> Courses { get; set; }
+        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //        {
+        //            if (!optionsBuilder.IsConfigured)
+        //            {
+        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+        //                optionsBuilder.UseSqlServer("Server=.\\sqlexpress01;Database=EFCoreDBFirstDemo;Trusted_Connection=True;");
+        //            }
+        //        }
 
 
 
@@ -77,5 +78,17 @@ namespace WebApplication1.Models.DB
                 entity.Property(e => e.Zip).HasMaxLength(10);
             });
         }
+        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //        {
+        //            if (!optionsBuilder.IsConfigured)
+        //            {
+        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+        //                optionsBuilder.UseSqlServer("Server=.\\sqlexpress01;Database=EFCoreDBFirstDemo;Trusted_Connection=True;");
+        //            }
+        //        }
+
+
+
+        public DbSet<WebApplication1.Models.DB.Grade> Grade { get; set; }
     }
 }
